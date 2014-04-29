@@ -1,6 +1,5 @@
 package edu.ncsu.csc326.coffeemaker;
 
-import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -4,7 +4,6 @@ package edu.ncsu.csc326.coffeemaker;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-@SuppressWarnings("deprecation")
 public class AddRecipeTest extends SetupTest{
 	
 
@@ -65,13 +64,5 @@ public class AddRecipeTest extends SetupTest{
 	}
 
 
-	public void testToString(){
-		Assert.assertNotNull(r1.toString());
-	}
-	
-
-	public void testHashcode(){
-		Assert.assertNotNull(r1.hashCode());
-	}
 
 }
