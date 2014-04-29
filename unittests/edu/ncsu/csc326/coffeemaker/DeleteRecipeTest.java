@@ -2,10 +2,6 @@ package edu.ncsu.csc326.coffeemaker;
 
 import junit.framework.Assert;
 
-/**
- * Created by iamapo on 08.04.14.
- */
-
 public class DeleteRecipeTest extends SetupTest {
 
 	public void deleteInAEmptyBook() {

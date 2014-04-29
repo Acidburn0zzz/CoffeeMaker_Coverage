@@ -38,7 +38,7 @@ public class PurchaseCoffeeTest extends SetupTest {
 	}
 
 	public void testPurchase5() {
-		Assert.assertEquals(60, cm.makeCoffee(r1, 60));
+		Assert.assertEquals(10, cm.makeCoffee(r1, 60));
 	}
 
 }

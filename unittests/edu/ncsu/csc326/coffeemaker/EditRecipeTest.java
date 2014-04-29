@@ -55,7 +55,7 @@ public class EditRecipeTest extends SetupTest {
 		Assert.assertNotNull(recipe);
 
 		recipe.setAmtChocolate(20);
-		Assert.assertEquals(recipe.getName(), cm.editRecipe(recipe, recipe));
+		Assert.assertEquals(false, cm.editRecipe(recipe, recipe));
 
 		recipe = cm.getRecipes()[number];
 		Assert.assertEquals(20, recipe.getAmtChocolate());
