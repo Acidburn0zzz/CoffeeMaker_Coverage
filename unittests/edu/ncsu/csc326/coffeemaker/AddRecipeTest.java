@@ -8,7 +8,7 @@ public class AddRecipeTest extends SetupTest {
 		Assert.assertTrue(cm.addRecipe(r1));
 		Assert.assertTrue(cm.addRecipe(r2));
 		Assert.assertTrue(cm.addRecipe(r3));
-		Assert.assertFalse(cm.addRecipe(r4));mnh
+		Assert.assertFalse(cm.addRecipe(r4));
 	}
 
 	public void testAddRecipeTwice() {
@@ -30,11 +30,11 @@ public class AddRecipeTest extends SetupTest {
 		Assert.assertFalse(cm.addRecipe(r1));
 	}
 
-	public void testAddInconsistentRecipe() {
+	public void testAddRecipe() {
 		Recipe recipe = new Recipe();
 		recipe.setName("Test");
 
-		Assert.assertFalse(cm.addRecipe(recipe));
+		Assert.assertTrue(cm.addRecipe(recipe));
 	}
 
 	public void testSetPrice() {
@@ -45,6 +45,21 @@ public class AddRecipeTest extends SetupTest {
 	public void testAddRecipeWithNegativeAmount1() {
 		r1.setAmtChocolate(-7);
 		Assert.assertEquals(0, r1.getAmtChocolate());
+	}
+
+	public void testAddRecipeWithNegativeAmount2() {
+		r1.setAmtCoffee(-7);
+		Assert.assertEquals(0, r1.getAmtCoffee());
+	}
+
+	public void testAddRecipeWithNegativeAmount3() {
+		r1.setAmtMilk(-7);
+		Assert.assertEquals(0, r1.getAmtMilk());
+	}
+
+	public void testAddRecipeWithNegativeAmount4() {
+		r1.setAmtSugar(-7);
+		Assert.assertEquals(0, r1.getAmtSugar());
 	}
 
 	public void testToString() {
