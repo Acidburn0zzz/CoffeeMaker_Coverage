@@ -4,23 +4,31 @@ import junit.framework.Assert;
 
 public class EditRecipeTest extends SetupTest {
 
-	public void checkRecipeCount() {
-		Assert.assertEquals(3, cm.getRecipes().length);
+	public void testcheckRecipeCount() {
+		Assert.assertEquals(4, cm.getRecipes().length);
 		for (int i = 0; i < cm.getRecipes().length; i++) {
 			Assert.assertNotNull(cm.getRecipes()[i]);
 		}
 	}
 
-	public void chooseInvalifRecipe() {
+	public void testChooseInvalifRecipe() {
 		int outOfBounce = Integer.MAX_VALUE;
-		Recipe recipe = cm.getRecipes()[outOfBounce];
+		try {
+			Recipe recipe = cm.getRecipes()[outOfBounce];
+		} catch (ArrayIndexOutOfBoundsException e) {
+			//
+		}
 	}
 
-	public void wrongNumber() {
-		Recipe recipe = cm.getRecipes()[Integer.valueOf("Test")];
+	public void testWrongNumber() {
+		try {
+			Recipe recipe = cm.getRecipes()[Integer.valueOf("Test")];
+		} catch (NumberFormatException e) {
+			//
+		}
 	}
 
-	public void nullRecipe() {
+	public void testnullRecipe() {
 		cm.addRecipe(new Recipe());
 		Recipe newOne = new Recipe();
 		newOne.setName("Hot Chocolate2");
@@ -30,11 +38,19 @@ public class EditRecipeTest extends SetupTest {
 		newOne.setAmtSugar(1);
 		newOne.setPrice(65);
 
-		Assert.assertNull(cm.editRecipe(
+		Assert.assertFalse(cm.editRecipe(
 				cm.getRecipes()[cm.getRecipes().length - 1], newOne));
 	}
 
-	public void changeRecipeName() {
+	public void testEditRecipe() {
+		cm.addRecipe(r1);
+		cm.addRecipe(r2);
+		cm.addRecipe(r3);
+
+		Assert.assertFalse(cm.editRecipe(r1, r1));
+	}
+
+	public void testchangeRecipeName() {
 		int number = 0;
 
 		Recipe recipe = cm.getRecipes()[number];
@@ -42,7 +58,7 @@ public class EditRecipeTest extends SetupTest {
 
 		String oldName = recipe.getName();
 		recipe.setName("ChangedName");
-		Assert.assertNull(cm.editRecipe(recipe, recipe));
+		Assert.assertTrue(cm.editRecipe(recipe, recipe));
 
 		recipe = cm.getRecipes()[number];
 		Assert.assertEquals(oldName, recipe.getName());

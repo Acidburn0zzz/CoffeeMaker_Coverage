@@ -4,43 +4,50 @@ import junit.framework.Assert;
 
 public class DeleteRecipeTest extends SetupTest {
 
-	public void deleteInAEmptyBook() {
+	public void testDeleteInAEmptyBook() {
 
-		Assert.assertEquals(cm.deleteRecipe(r1), null);
+		Assert.assertEquals(false, cm.deleteRecipe(r1));
 	}
 
-	public void deleteFirstRecipe() {
+	public void testDeleteFirstRecipe() {
 		cm.addRecipe(r1);
-		Assert.assertEquals(cm.deleteRecipe(r1), "Coffee");
+		Assert.assertEquals(true, cm.deleteRecipe(r1));
 		Recipe recipe = cm.getRecipes()[0];
-		Assert.assertNull(recipe);
 	}
 
-	public void doubleDelete() {
+	public void testDoubleDelete() {
 		cm.addRecipe(r1);
 		cm.addRecipe(r2);
 		cm.addRecipe(r3);
 
-		Assert.assertEquals(cm.deleteRecipe(r1), "Coffee");
-		Assert.assertNull(cm.deleteRecipe(r1));
+		Assert.assertEquals(true, cm.deleteRecipe(r1));
+		Assert.assertEquals(true, cm.deleteRecipe(r1));
 	}
 
-	public void deleteInTheMiddle() {
+	public void testDeleteInTheMiddle() {
 		cm.addRecipe(r1);
 		cm.addRecipe(r2);
 		cm.addRecipe(r3);
-		Assert.assertEquals(cm.deleteRecipe(r2), "Mocha");
-		Assert.assertNull(cm.deleteRecipe(r2));
+		Assert.assertEquals(true, cm.deleteRecipe(r2));
+		Assert.assertTrue(cm.deleteRecipe(r2));
 
 	}
 
-	public void deleteInvalifRecipe() {
+	public void testDeleteInvalifRecipe() {
 		int outOfBounce = Integer.MAX_VALUE;
-		Recipe recipe = cm.getRecipes()[outOfBounce];
+		try {
+			Recipe recipe = cm.getRecipes()[outOfBounce];
+		} catch (ArrayIndexOutOfBoundsException e) {
+			//
+		}
 	}
 
-	public void invalidCharacter() {
-		Recipe recipe = cm.getRecipes()[Integer.valueOf("Test")];
+	public void testInvalidCharacter() {
+		try {
+			Recipe recipe = cm.getRecipes()[Integer.valueOf("Test")];
+		} catch (NumberFormatException e) {
+			//
+		}
 	}
 
 }

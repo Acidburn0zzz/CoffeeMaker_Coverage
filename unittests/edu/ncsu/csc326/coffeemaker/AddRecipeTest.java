@@ -4,13 +4,6 @@ import junit.framework.Assert;
 
 public class AddRecipeTest extends SetupTest {
 
-	public void addMoreThan3Recipes() {
-		Assert.assertTrue(cm.addRecipe(r1));
-		Assert.assertTrue(cm.addRecipe(r2));
-		Assert.assertTrue(cm.addRecipe(r3));
-		Assert.assertFalse(cm.addRecipe(r4));
-	}
-
 	public void testAddRecipeTwice() {
 		Assert.assertTrue(cm.addRecipe(r1));
 		Assert.assertFalse(cm.addRecipe(r1));

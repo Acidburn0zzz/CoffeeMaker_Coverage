@@ -9,14 +9,7 @@ public abstract class SetupTest extends TestCase {
 	public Recipe r2;
 	public Recipe r3;
 	public Recipe r4;
-
-	public SetupTest() {
-		super();
-	}
-
-	public SetupTest(String name) {
-		super(name);
-	}
+	public Recipe r5;
 
 	public void setUp() throws Exception {
 		cm = new CoffeeMaker();
@@ -56,6 +49,14 @@ public abstract class SetupTest extends TestCase {
 		r4.setAmtMilk(1);
 		r4.setAmtSugar(1);
 		r4.setPrice(65);
+
+		r5 = new Recipe();
+		r5.setName("Hot Chocolate2");
+		r5.setAmtChocolate(4);
+		r5.setAmtCoffee(0);
+		r5.setAmtMilk(1);
+		r5.setAmtSugar(1);
+		r5.setPrice(65);
 	}
 
 }

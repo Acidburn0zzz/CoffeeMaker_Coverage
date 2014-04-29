@@ -1,32 +1,35 @@
 package edu.ncsu.csc326.coffeemaker;
 
 import junit.framework.Assert;
-import junit.framework.TestCase;
 
 public class CheckInventoryTest extends SetupTest {
-	
-	public void testAddInventory1(){
+
+	public void testAddInventory1() {
 		cm.addInventory(10, 0, 10, 10);
 	}
 
-	public void testAddInventory2(){
+	public void testAddInventory2() {
 		cm.addInventory(0, 10, 10, 10);
 	}
 
-	public void testAddInventory5(){
+	public void testAddInventory5() {
 		cm.addInventory(-10, 10, 10, 10);
 	}
-	
-	public void testAddInventory6(){
+
+	public void testAddInventory6() {
 		cm.addInventory(10, -10, 10, 10);
 	}
-	
-	public void testAddInventory7(){
+
+	public void testAddInventory7() {
 		cm.addInventory(10, 10, -10, 10);
 	}
-	
-	public void testAddInventory8(){
+
+	public void testAddInventory8() {
 		cm.addInventory(10, 10, 10, -10);
+	}
+
+	public void testAddInventory9() {
+		cm.addInventory(-10, -10, -10, -10);
 	}
 
 	public void testCheckGetter() {
@@ -37,9 +40,78 @@ public class CheckInventoryTest extends SetupTest {
 		Assert.assertEquals(inventory.getSugar(), 15);
 	}
 
-    public void testToString() {
+	public void testToString() {
 		Inventory inventory = new Inventory();
 		Assert.assertNotNull(inventory.toString());
+	}
+
+	public void testSetter() {
+		Inventory inventory = new Inventory();
+
+		int a = inventory.getChocolate();
+		int b = inventory.getCoffee();
+		int c = inventory.getMilk();
+		int d = inventory.getSugar();
+
+		inventory.setChocolate(-1);
+		inventory.setCoffee(-1);
+		inventory.setMilk(-1);
+		inventory.setSugar(-1);
+
+		Assert.assertEquals(a, inventory.getChocolate());
+		Assert.assertEquals(b, inventory.getCoffee());
+		Assert.assertEquals(c, inventory.getMilk());
+		Assert.assertEquals(d, inventory.getSugar());
+	}
+
+	public void testEnoughIngredients() {
+		Inventory inventory = new Inventory();
+		Recipe recipe = new Recipe();
+		recipe.setAmtChocolate(15000);
+
+		inventory.setChocolate(15);
+
+		inventory.enoughIngredients(recipe);
+	}
+
+	public void testEnoughIngredients2() {
+		Inventory inventory = new Inventory();
+		Recipe recipe = new Recipe();
+		recipe.setAmtSugar(15000);
+
+		inventory.setSugar(15);
+
+		inventory.enoughIngredients(recipe);
+	}
+
+	public void testEnoughIngredients3() {
+		Inventory inventory = new Inventory();
+		Recipe recipe = new Recipe();
+		recipe.setAmtMilk(15000);
+
+		inventory.setMilk(15);
+
+		inventory.enoughIngredients(recipe);
+	}
+
+	public void testEnoughIngredients4() {
+		Inventory inventory = new Inventory();
+		Recipe recipe = new Recipe();
+		recipe.setAmtCoffee(15000);
+
+		inventory.setCoffee(15);
+
+		inventory.enoughIngredients(recipe);
+	}
+
+	public void testEqulas() {
+		Recipe recipe = new Recipe();
+		recipe.setName(null);
+
+		Recipe recipe2 = new Recipe();
+		recipe2.setName("Test");
+
+		Assert.assertFalse(recipe.equals(recipe2));
 	}
 
 }
