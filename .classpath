@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="unittests"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/Users/iamapo/Documents/workspace/CoffeeMaker_Coverage/junit-3.8.2.jar"/>
+	<classpathentry kind="lib" path="junit-3.8.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
