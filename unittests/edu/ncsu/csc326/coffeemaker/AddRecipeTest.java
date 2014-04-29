@@ -33,11 +33,11 @@ public class AddRecipeTest extends SetupTest{
 	}
 
 	
-	public void testAddInconsistentRecipe() {
+	public void testAddRecipe() {
 		Recipe recipe = new Recipe();
 		recipe.setName("Test");
 
-		Assert.assertFalse(cm.addRecipe(recipe));
+		Assert.assertTrue(cm.addRecipe(recipe));
 	}
 	
 
@@ -53,7 +53,20 @@ public class AddRecipeTest extends SetupTest{
 		Assert.assertEquals(0, r1.getAmtChocolate());
 	}
 
+	public void testAddRecipeWithNegativeAmount2() {
+		r1.setAmtCoffee(-7);
+		Assert.assertEquals(0, r1.getAmtCoffee());
+	}
 	
+	public void testAddRecipeWithNegativeAmount3() {
+		r1.setAmtMilk(-7);
+		Assert.assertEquals(0, r1.getAmtMilk());
+	}
+	
+	public void testAddRecipeWithNegativeAmount4() {
+		r1.setAmtSugar(-7);
+		Assert.assertEquals(0, r1.getAmtSugar());
+	}
 	
 	public void testToString(){
 		Assert.assertNotNull(r1.toString());
