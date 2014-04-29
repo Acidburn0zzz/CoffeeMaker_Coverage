@@ -1,6 +1,7 @@
 package edu.ncsu.csc326.coffeemaker;
 
 import junit.framework.Assert;
+import junit.framework.TestCase;
 
 /**
  * 
@@ -8,7 +9,7 @@ import junit.framework.Assert;
  * 
  *         Unit tests for CoffeeMaker class.
  */
-public class CoffeeMakerTest {
+public class CoffeeMakerTest extends TestCase {
 
 	// Beispiel:
 	//
