@@ -10,7 +10,7 @@ public class DeleteRecipeTest extends SetupTest {
 
 	public void deleteInAEmptyBook() {
 
-		Assert.assertEquals(cm.deleteRecipe(0), null);
+		Assert.assertEquals(cm.deleteRecipe(r1), null);
 	}
 
 	public void deleteFirstRecipe() {
