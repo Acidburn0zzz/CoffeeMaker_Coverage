@@ -1,13 +1,9 @@
 package edu.ncsu.csc326.coffeemaker;
 
-
 import junit.framework.Assert;
-import junit.framework.TestCase;
 
 public class AddRecipeTest extends SetupTest{
 	
-
-
 	public void addMoreThan3Recipes() {
 		Assert.assertTrue(cm.addRecipe(r1));
 		Assert.assertTrue(cm.addRecipe(r2));
@@ -15,14 +11,14 @@ public class AddRecipeTest extends SetupTest{
 		Assert.assertFalse(cm.addRecipe(r4));
 	}
 
-
-	public void addRecipeTwice() {
+	
+	public void testAddRecipeTwice() {
 		Assert.assertTrue(cm.addRecipe(r1));
 		Assert.assertFalse(cm.addRecipe(r1));
 	}
 
-
-	public void addIdenticalRecipe(){
+	
+	public void testAddIdenticalRecipe() {
 		Assert.assertTrue(cm.addRecipe(r1));
 
 		Recipe r5 = new Recipe();
@@ -31,13 +27,13 @@ public class AddRecipeTest extends SetupTest{
 		r5.setAmtMilk((r1.getAmtMilk()));
 		r5.setAmtSugar((r1.getAmtSugar()));
 		r5.setPrice((r1.getPrice()));
-		r5.setName((String.valueOf(r1.getName())));
+		r5.setName((r1.getName()));
 
 		Assert.assertFalse(cm.addRecipe(r1));
 	}
 
-
-	public void addInconsistentRecipe() {
+	
+	public void testAddInconsistentRecipe() {
 		Recipe recipe = new Recipe();
 		recipe.setName("Test");
 
@@ -45,24 +41,27 @@ public class AddRecipeTest extends SetupTest{
 	}
 	
 
-	public void setPrice(){
+	public void testSetPrice() {
 		r1.setPrice(-3);
+		Assert.assertEquals(0, r1.getPrice());
 	}
 
 
-	public void addRecipeWithWrongPrice() {
-		r1.setPrice((int) 7.5);
-	}
 
-	public void addRecipeWithWrongUnit() {
-		r1.setAmtChocolate((int) 7.0);
-	}
-
-
-	public void addRecipeWithWrongUnit2(){
+	public void testAddRecipeWithNegativeAmount1() {
 		r1.setAmtChocolate(-7);
+		Assert.assertEquals(0, r1.getAmtChocolate());
 	}
 
-
+	
+	
+	public void testToString(){
+		Assert.assertNotNull(r1.toString());
+	}
+	
+	
+	public void testHashcode(){
+		Assert.assertNotNull(r1.hashCode());
+	}
 
 }
