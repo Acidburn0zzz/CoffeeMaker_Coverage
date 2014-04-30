@@ -32,7 +32,7 @@ public class CheckInventoryTest extends SetupTest {
 		cm.addInventory(-10, -10, -10, -10);
 	}
 
-	public void testCheckGetter() {
+	public void testGetter() {
 		Inventory inventory = new Inventory();
 		Assert.assertEquals(inventory.getChocolate(), 15);
 		Assert.assertEquals(inventory.getCoffee(), 15);
@@ -73,7 +73,7 @@ public class CheckInventoryTest extends SetupTest {
 		Assert.assertEquals(0, inventory.getSugar());
 	}
 
-	public void testEnoughIngredients() {
+	public void testEnoughChocolate() {
 		Inventory inventory = new Inventory();
 		Recipe recipe = new Recipe();
 		recipe.setAmtChocolate(15000);
@@ -83,7 +83,7 @@ public class CheckInventoryTest extends SetupTest {
 		inventory.enoughIngredients(recipe);
 	}
 
-	public void testEnoughIngredients2() {
+	public void testEnoughSugar() {
 		Inventory inventory = new Inventory();
 		Recipe recipe = new Recipe();
 		recipe.setAmtSugar(15000);
@@ -93,7 +93,7 @@ public class CheckInventoryTest extends SetupTest {
 		inventory.enoughIngredients(recipe);
 	}
 
-	public void testEnoughIngredients3() {
+	public void testEnoughMilk() {
 		Inventory inventory = new Inventory();
 		Recipe recipe = new Recipe();
 		recipe.setAmtMilk(15000);
@@ -103,7 +103,7 @@ public class CheckInventoryTest extends SetupTest {
 		inventory.enoughIngredients(recipe);
 	}
 
-	public void testEnoughIngredients4() {
+	public void testEnoughCoffee() {
 		Inventory inventory = new Inventory();
 		Recipe recipe = new Recipe();
 		recipe.setAmtCoffee(15000);

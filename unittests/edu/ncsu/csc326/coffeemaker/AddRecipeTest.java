@@ -30,7 +30,7 @@ public class AddRecipeTest extends SetupTest {
 		Assert.assertTrue(cm.addRecipe(recipe));
 	}
 
-	public void testSetPrice() {
+	public void testSetNegativePrice() {
 		r1.setPrice(-3);
 		Assert.assertEquals(0, r1.getPrice());
 	}
