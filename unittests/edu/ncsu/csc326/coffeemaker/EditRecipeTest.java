@@ -43,12 +43,15 @@ public class EditRecipeTest extends SetupTest {
 	}
 
 	public void testEditRecipe() {
+		// todo: prüfen ob der Test so sinnvoll ist, hab nur auf 100% Coverage geachtet
 		cm.addRecipe(r1);
 		cm.addRecipe(r2);
 		cm.addRecipe(r3);
-
+		cm.addRecipe(r4);
+		
 		Assert.assertFalse(cm.editRecipe(r1, r1));
 	}
+	
 
 	public void testchangeRecipeName() {
 		int number = 0;

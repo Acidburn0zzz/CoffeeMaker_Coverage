@@ -48,20 +48,29 @@ public class CheckInventoryTest extends SetupTest {
 	public void testSetter() {
 		Inventory inventory = new Inventory();
 
-		int a = inventory.getChocolate();
-		int b = inventory.getCoffee();
-		int c = inventory.getMilk();
-		int d = inventory.getSugar();
+		inventory.setChocolate(5);
+		inventory.setCoffee(5);
+		inventory.setMilk(5);
+		inventory.setSugar(5);
+
+		Assert.assertEquals(5, inventory.getChocolate());
+		Assert.assertEquals(5, inventory.getCoffee());
+		Assert.assertEquals(5, inventory.getMilk());
+		Assert.assertEquals(5, inventory.getSugar());
+	}
+	
+	public void testSetterLessThan0() {
+		Inventory inventory = new Inventory();
 
 		inventory.setChocolate(-1);
 		inventory.setCoffee(-1);
 		inventory.setMilk(-1);
 		inventory.setSugar(-1);
 
-		Assert.assertEquals(a, inventory.getChocolate());
-		Assert.assertEquals(b, inventory.getCoffee());
-		Assert.assertEquals(c, inventory.getMilk());
-		Assert.assertEquals(d, inventory.getSugar());
+		Assert.assertEquals(0, inventory.getChocolate());
+		Assert.assertEquals(0, inventory.getCoffee());
+		Assert.assertEquals(0, inventory.getMilk());
+		Assert.assertEquals(0, inventory.getSugar());
 	}
 
 	public void testEnoughIngredients() {
