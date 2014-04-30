@@ -35,22 +35,22 @@ public class AddRecipeTest extends SetupTest {
 		Assert.assertEquals(0, r1.getPrice());
 	}
 
-	public void testAddRecipeWithNegativeAmount1() {
+	public void testAddRecipeWithNegativeAmountChocolate() {
 		r1.setAmtChocolate(-7);
 		Assert.assertEquals(0, r1.getAmtChocolate());
 	}
 
-	public void testAddRecipeWithNegativeAmount2() {
+	public void testAddRecipeWithNegativeAmountCoffee() {
 		r1.setAmtCoffee(-7);
 		Assert.assertEquals(0, r1.getAmtCoffee());
 	}
 
-	public void testAddRecipeWithNegativeAmount3() {
+	public void testAddRecipeWithNegativeAmountMilk() {
 		r1.setAmtMilk(-7);
 		Assert.assertEquals(0, r1.getAmtMilk());
 	}
 
-	public void testAddRecipeWithNegativeAmount4() {
+	public void testAddRecipeWithNegativeAmountSugar() {
 		r1.setAmtSugar(-7);
 		Assert.assertEquals(0, r1.getAmtSugar());
 	}
