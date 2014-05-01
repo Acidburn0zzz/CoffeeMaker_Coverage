@@ -47,7 +47,7 @@ public class CoffeeMakerTest extends SetupTest {
 		Assert.assertFalse(cm.deleteRecipe(null));
 	}
 
-	public void testCHeckInventory() {
+	public void testCheckInventory() {
 		Assert.assertNotNull(cm.checkInventory());
 	}
 

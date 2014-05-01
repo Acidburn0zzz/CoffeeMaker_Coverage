@@ -33,19 +33,11 @@ public class DeleteRecipeTest extends SetupTest {
 
 	}
 
-	public void testDeleteInvalifRecipe() {
-		int outOfBounce = Integer.MAX_VALUE;
+	public void testDeleteInvalidRecipe() {
+		int outOfBounds = Integer.MAX_VALUE;
 		try {
-			Recipe recipe = cm.getRecipes()[outOfBounce];
+			Recipe recipe = cm.getRecipes()[outOfBounds];
 		} catch (ArrayIndexOutOfBoundsException e) {
-			//
-		}
-	}
-
-	public void testInvalidCharacter() {
-		try {
-			Recipe recipe = cm.getRecipes()[Integer.valueOf("Test")];
-		} catch (NumberFormatException e) {
 			//
 		}
 	}
