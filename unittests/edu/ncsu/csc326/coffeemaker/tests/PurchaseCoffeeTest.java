@@ -1,4 +1,4 @@
-package edu.ncsu.csc326.coffeemaker;
+package edu.ncsu.csc326.coffeemaker.tests;
 
 import junit.framework.Assert;
 

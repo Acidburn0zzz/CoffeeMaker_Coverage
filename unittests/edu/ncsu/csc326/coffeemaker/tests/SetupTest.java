@@ -1,5 +1,7 @@
-package edu.ncsu.csc326.coffeemaker;
+package edu.ncsu.csc326.coffeemaker.tests;
 
+import edu.ncsu.csc326.coffeemaker.CoffeeMaker;
+import edu.ncsu.csc326.coffeemaker.Recipe;
 import junit.framework.TestCase;
 
 public abstract class SetupTest extends TestCase {
