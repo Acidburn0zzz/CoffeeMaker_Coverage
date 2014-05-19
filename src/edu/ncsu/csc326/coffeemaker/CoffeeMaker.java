@@ -120,7 +120,8 @@ public class CoffeeMaker {
 	public boolean addInventory(int amtCoffee, int amtMilk, int amtSugar,
 			int amtChocolate) {
 		boolean canAddInventory = true;
-		if (amtCoffee < 0 || amtMilk < 0 || amtSugar > 0 || amtChocolate < 0) {
+		if (amtCoffee < 0 || amtMilk < 0 || amtSugar < 0 || amtChocolate < 0) { // Fixed for jumble
+			//if (amtCoffee < 0 || amtMilk < 0 || amtSugar > 0 || amtChocolate < 0) {
 			canAddInventory = false;
 		} else {
 			inventory.setCoffee(inventory.getCoffee() + amtCoffee);
